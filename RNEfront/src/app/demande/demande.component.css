@@ -1,0 +1,97 @@
+.my-container {
+  width: calc(85% - 40px); /* Adjust width to take sidebar into account */
+  margin-left: 15%; /* Start after the sidebar */
+  padding: 20px;
+  text-align: center;
+}
+
+/* Margin for button container */
+.button-container {
+  margin-bottom: 20px;
+}
+
+/* Table container with added left margin to create space from the sidebar */
+.table-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-left: 0; /* Reset any left margin */
+}
+
+/* Table styling */
+.table {
+  width: 100%;
+  max-width: 1000px; /* Adjust the max-width as needed */
+  margin-left: auto; /* Align table center relative to container */
+  margin-right: auto; /* Align table center relative to container */
+}
+
+/* Table header and cell styling */
+.table th,
+.table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Prevent text wrapping in specified columns */
+.table th.nowrap,
+.table td.nowrap {
+  white-space: nowrap;
+}
+
+/* Request button styling */
+.requestbtn {
+  background-image: linear-gradient(
+    to right,
+    #1a2980 0%,
+    #26d0ce 51%,
+    #1a2980 100%
+  );
+  /* margin-left: 32%; */
+  margin-top: 30px;
+  padding: 10px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  border: none;
+}
+
+/* Hover effect for request button */
+.requestbtn:hover {
+  background-position: right center; /* Change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Icon styles */
+.btn-payment i.fa-cart-shopping {
+  color: #1a2980;
+}
+.btn-edit i.fa-edit {
+  color: #1a2980;
+}
+
+.btn-delete i.fa-trash {
+  color: #f44336;
+}
+
+/* General button styling */
+.btn {
+  border: none;
+  background: none;
+}
+
+.btn i {
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+/* Hover effect for icons */
+.btn:hover i {
+  color: #000; /* Change color to black on hover */
+}

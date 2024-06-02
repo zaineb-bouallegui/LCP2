@@ -1,0 +1,25 @@
+.navbar {
+    background-color: #243153;
+    color: white;
+    height: 50px;
+}
+
+.navbarList {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+
+    margin-top: 10px;
+    
+   
+}
+
+.navbarList li {
+    font-size: 12px;
+   
+}
+
+.navbarList li:hover {
+    cursor: pointer;
+}

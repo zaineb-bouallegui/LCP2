@@ -1,0 +1,359 @@
+.container1 {
+            width: 100%;
+            border: 1px solid #ccc;
+            overflow: hidden; /* Clearfix */
+            margin-bottom: 10px;
+        }
+.container1 div {
+            display: inline-block;
+            width: 33.3%;
+            box-sizing: border-box; /* Include padding in width */
+            padding: 10px; /* Adjust padding as needed */
+            box-sizing: border-box; /* Include padding in width */
+        }        
+
+
+.container2{
+     width: 100%;
+     border: 1px solid #ccc;
+    
+}   
+
+
+.container2 div {
+            display: inline-block;
+            width:33.3%;
+            box-sizing: border-box; /* Include padding in width */
+            padding: 10px; /* Adjust padding as needed */
+            box-sizing: border-box; /* Include padding in width */
+        }  
+.container3{
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    
+}
+.container3 div {
+            display: inline-block;
+            width:33.3%;
+            box-sizing: border-box; /* Include padding in width */
+            padding: 10px; /* Adjust padding as needed */
+            box-sizing: border-box; /* Include padding in width */
+}
+
+.container4{
+    margin-top: 10px;
+     width: 100%;
+     border: 1px solid #ccc;
+     height: 100px;
+}
+.TypePersonne{
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 20px;
+}
+.entrepriseDiv{
+   margin-left: 200px;
+   width: 20%;
+   margin-top: 10px;
+   height: 100%;
+
+}
+.societeTitle{
+  color: #95d0dc;
+  font-weight: bold;
+  margin-left: 5px;
+}
+/*
+.container4 div{
+            display: inline-block;
+            width:33.3%;
+            box-sizing: border-box; 
+            padding: 10px; 
+            box-sizing: border-box; 
+}*/
+
+/*stepper css*/
+.c-stepper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.c-stepper__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.c-stepper__item:before {
+  --size: 3rem;
+  content: "";
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  margin: 1rem auto 0;
+}
+.btn-next {
+    display: block; 
+    margin-left: auto; 
+    margin-right: 0; 
+}
+
+
+.parent-div{
+  background-color: #fff2cc;
+  margin-top: 20px;
+  height:55px;
+   
+}
+
+.child-div{
+  display: inline-block;
+}
+
+.AjoutAssocieParent{
+ /* border: 1px solid black;*/
+  margin-top: 10px;
+  height: 100px;
+}
+
+.AjoutAssocieParent div{
+  margin-left: 20px;
+  display: inline-block;
+}
+
+
+
+.divAjoutAssocie{
+  margin-left: 400px;
+  margin-top: 30px;
+}
+
+.divAjoutMembre{
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  
+}
+.btnAjoutAssocie{
+  color:white;
+  background-color: #5873a2;
+  
+}
+
+/*information sur le capital container*/
+.container6{
+  width: 100%;
+  border: 1px solid #ccc;
+  overflow: hidden; /* Clearfix */
+}
+
+.btn-bordered{
+  border-radius: 50%;
+}
+
+.borderAccordion {
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);  
+}
+
+.valideButton{
+  color:white;
+  background-image: linear-gradient(to right, #1A2980 0%, #26D0CE  51%, #1A2980  100%);
+  transition: 0.5s;
+  background-size: 200% auto;          
+  box-shadow: 0 0 20px #eee;
+}
+.valideButton:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+.AnnuleButton{
+  color:#1A2980;
+  border-color:#1A2980 ;
+}
+
+
+.AnnuEtValidDiv{
+  margin-top: 10px;
+  margin-left: 40%;
+
+
+.icon-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-text {
+    margin-top: 5px; 
+}
+
+.m-icons-sharp {
+    font-size: 60px; 
+}
+.icon-title {
+    display: flex;
+    align-items: center;
+}
+
+.icon-text {
+    margin-left: 5px; 
+    font-size: 24px; 
+}
+.separator {
+    position: relative;
+    border-top: 25px solid #cccccc;
+    margin: 10px 0 20px;
+}
+
+.left-text, .right-text {
+    position: absolute;
+    background: #fff;
+    padding: 0 10px;
+    line-height: 0;
+    top: -0.6em;
+    font-size: 1.5em;
+}
+
+.left-text {
+    left: 0; /* This positions the left text at the very start */
+    right: 50%; /* New property to push it away from the center */
+}
+
+.right-text {
+    right: 0; /* This positions the right text at the very end */
+    left: 50%; /* New property to push it away from the center */
+}
+.separator1 {
+    position: relative;
+
+    border-top: 25px solid #fff2cc; /* Couleur grise pour la ligne */
+
+    margin: 10px 0 20px;
+}
+.left-text2, .right-text2 {
+    position: absolute;
+    background: #fff; 
+    padding: 0 20px; 
+    line-height: 0;
+    top: -0.6em;
+    font-size: 1em;
+   
+}
+
+.left-text2 {
+    left: 0; 
+}
+
+.right-text2 {
+    right: 0;
+}
+.separator2 {
+    position: relative;
+    border-top: 25px solid #cccccc; 
+    margin: 10px 0 20px; 
+}
+.left-text3, .right-text3 {
+    position: absolute;
+    background: #fff;
+    padding: 0 20px; 
+    line-height: 0;
+    top: -0.6em;
+    font-size: 1em; 
+}
+
+.left-text3 {
+    left: 0; 
+}
+
+.right-text3 {
+
+    right: 0; 
+}}
+
+
+.FileDiv{
+  border: 1px dashed #ccc;
+  height: 70px; 
+ 
+}
+
+.File{
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.divBenif{
+  border: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+.paimentGuichetParent{
+   border: 1px solid #f7f9fb;
+   border-radius:10px;
+   background-color: #f7f9fb;
+   margin-top:20px;
+}
+
+.paimentGuichet{
+  border-bottom:1px solid #ccc;
+}
+
+.btnContGuichet {
+  color: #fff;
+  border-radius: 30px;
+  height: 40px; /* Adjust height as needed */
+  margin-left: 40%;
+  margin-top: 20px;
+  text-align: center; /* Centers text horizontally */
+  line-height: 30px; /* Aligns text vertically - should match the button's height */
+  display: inline-block; /* Ensures the button respects text alignment */
+  padding: 0 15px;
+  background-image: linear-gradient(to right, #1A2980 0%, #26D0CE  51%, #1A2980  100%);
+  transition: 0.5s;
+  background-size: 200% auto;          
+  box-shadow: 0 0 20px #eee;
+     
+}
+.btnContGuichet:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+      
+
+#myfile{
+  display: none;
+}
+
+#myfile1{
+  display: none;
+}
+
+#myfile2{
+  display: none;
+}
+
+
+#myfile3{
+  display: none;
+}
+
+#myfile4{
+  display: none;
+}
+
+#myfile5{
+  display: none;
+}
+#myfile6{
+  display: none;
+}
+#myfile7{
+  display: none;
+}

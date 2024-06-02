@@ -1,0 +1,82 @@
+.sidebar {
+  width: 15%;
+  height: calc(100vh - 50px);
+  background-color: #287d8e;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  text-align: left;
+}
+
+.sidebarWrapper {
+  color: #ffffff;
+}
+
+.sidebarMenu {
+  margin-bottom: 10px;
+  border-bottom: solid 1px #62a0ac;
+  width: 100%;
+  display: flex;
+}
+
+.sidebarTitle {
+  font-size: 13px;
+  color: rgb(255, 255, 255);
+  margin-left: 10px;
+  margin-top: 10px;
+}
+<<<<<<< HEAD
+
+.sidebarList {
+  list-style: none;
+  padding: 5px;
+}
+
+.sidebarListItem {
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.sidebarListItem:hover {
+  background-color: rgb(149, 218, 219);
+}
+
+=======
+
+.sidebarList {
+  list-style: none;
+  padding: 5px;
+}
+
+.sidebarListItem {
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.sidebarListItem:hover {
+  background-color: rgb(149, 218, 219);
+}
+
+>>>>>>> main
+.sidebarIcon {
+  margin-right: 5px;
+  font-size: 20px !important;
+}
+/*
+.glyphicon {
+  margin-right: 10px;
+}
+*/
+h3{
+  font-family: Arial, Helvetica, sans-serif;
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> main

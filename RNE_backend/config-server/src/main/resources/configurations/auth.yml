@@ -1,0 +1,28 @@
+eureka:
+   instance:
+      hostname: localhost
+   client:
+      service-url:
+         defaultZone: http://localhost:8761/eureka
+
+
+server:
+   port: 8082
+spring:
+   application:
+      name: auth
+   datasource:
+      driver-class-name: org.postgresql.Driver
+      url: jdbc:postgresql://localhost:5432/RNEdb?autoReconnect=true&useSSL=false&createDatabaseIfNotExist=true
+      username: postgres
+      password: nour123
+   jpa:
+      hibernate:
+         ddl-auto: update
+      database: postgresql
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+management:
+   tracing:
+      sampling:
+         probability: 1.0
