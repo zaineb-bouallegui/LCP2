@@ -1,0 +1,62 @@
+<h1 style="text-align: center; margin-top: 100px;">Mes demandes de création en ligne</h1>
+<div class="my-container">
+  <div class="button-container">
+    <button type="button" class="requestbtn" (click)="saveDemande()">Nouvelle Demande</button>
+    <button type="button" class="requestbtn" (click)="saveDemandeOutsystems()">Créer Une Demande avec
+      Outsystems</button>
+  </div>
+  <div class="table-container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th class="nowrap">Type Registre</th>
+          <th class="nowrap">Dénomination (Ar)/Nom Prénom(Ar)</th>
+          <th class="nowrap">Dénomination (Fr)/Nom Prénom(Fr)</th>
+          <th class="nowrap">Date Envoi</th>
+          <th class="nowrap">Statut Demande</th>
+          <th class="nowrap">Date Limite</th>
+          <th>Paiement</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let demande of demandes">
+          <td>{{demande.id}}</td>
+          <td class="nowrap">{{demande.typeRegistre}}</td>
+          <td class="nowrap">{{demande.societe.denomination_Sociale_Ar}}</td>
+          <td class="nowrap">{{demande.societe.denomination_Sociale_Fr}}</td>
+          <td class="nowrap">{{demande.dateEnvoi}}</td>
+          <td class="nowrap">
+            <span class="badge" [ngClass]="{
+                'badge-info': demande.statutDemande === 'EnCours',
+                'badge-success': demande.statutDemande === 'Cree',
+                'badge-warning': demande.statutDemande === 'StatutEnCours',
+                'badge-default': demande.statutDemande !== 'EnCours' && demande.statutDemande !== 'Cree' && demande.statutDemande !== 'StatutEnCours'
+              }" style="font-size: 12px;">
+              {{
+              demande.statutDemande === 'EnCours' ? 'En cours de création' :
+              (demande.statutDemande === 'Cree' ? 'Demande créée' :
+              (demande.statutDemande === 'StatutEnCours' ? 'Statut en cours' : demande.statutDemande))
+              }}
+            </span>
+          </td>
+          <td class="nowrap">{{demande.deadline}}</td>
+          <td><button class="btn btn-payment"><i class="fa-solid fa-cart-shopping"></i></button></td>
+          <td>
+            <button *ngIf="demande.statutDemande === 'Cree'" class="btn btn-consult">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+            <button *ngIf="demande.statutDemande !== 'Cree'" class="btn btn-delete" (click)="deleteDemande(demande.id)">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+            <button *ngIf="demande.statutDemande === 'EnCours' || demande.statutDemande === 'StatutEnCours'"
+              class="btn btn-edit">
+              <i class="fa-solid fa-edit"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
