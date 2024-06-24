@@ -1,0 +1,27 @@
+eureka:
+   client:
+      register-with-eureka: false
+server:
+   port: 8222
+spring:
+   application:
+      name: gateway
+   cloud:
+      gateway:
+         discovery:
+            locator:
+               enabled: true
+         routes:
+         -  id: referentiel
+            uri: http://localhost:8081
+            predicates:
+            - Path=/api/referentiel/**
+         -  id: request
+            uri: http://localhost:8082
+            predicates:
+            - Path=/api/demande/**    
+
+management:
+   tracing:
+      sampling:
+         probability: 1.0
