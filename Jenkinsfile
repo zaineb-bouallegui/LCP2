@@ -31,7 +31,7 @@ pipeline {
     post {
         success {
             echo 'Cleaning up...'
-            cleanWs()
+            
         }
     }
 }
