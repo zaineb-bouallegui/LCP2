@@ -4,6 +4,10 @@ pipeline {
     tools {
         nodejs 'NodeJS' // Name of the NodeJS installation in Jenkins
     }
+     environment {
+        registry = "yousseflogtari/rne" // Docker repository name
+        dockerImage = "RNEfront:v1" // Tag for Docker image
+    }
 
     stages {
         stage('Checkout Angular App') {
@@ -26,26 +30,32 @@ pipeline {
                 sh 'ng build'
             }
         }
-        stage('Docker') {
+         stage('Dockerize Angular App') {
             when {
                 branch 'RNEfrontAngular'
             }
             steps {
                 script {
-                    if (!fileExists('dist')) {
-                        error "Build failed due to missing target directory"
-                    } else {
-                        sh 'ls -l dist'
-                        
-                        withDockerRegistry(credentialsId: 'jenkins-dist', toolName: 'Docker') {
-                            sh 'docker build -t yousseflogtari/youssef:firstTag .'
-                            sh 'docker push yousseflogtari/youssef:firstTag'
-                        }
-                    }
+                    // Build Docker image
+                    docker.build dockerImage, "-f Dockerfile ."
                 }
             }
         }
-    
+
+        stage('Push Docker Image') {
+            when {
+                branch 'RNEfrontAngular'
+            }
+            steps {
+                script {
+                    // Push Docker image to your Docker repository
+                   docker.withRegistry('https://registry.hub.docker.com', 'jenkins-docker') {
+                   dockerImage.push()
+                   }
+                      }
+                }
+        }
+        
       
     }
     
