@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     /// Build Docker image
-                     docker.build dockerImage, "-f RNEfrontPipline_RNEfrontAngular/Dockerfile ."
+                     docker.build dockerImage, "-f Dockerfile ."
                 }
             }
         }
