@@ -6,7 +6,7 @@ pipeline {
     }
      environment {
         registry = "yousseflogtari/rne" // Docker repository name
-        dockerImage = "${registry}:v1" // Tag for Docker image
+        dockerImageTag = "v1" // Tag for Docker image
     }
 
     stages {
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     /// Build Docker image
-                     docker.build dockerImage, "-f dockerfile ."
+                     dockerImage = docker.build("${registry}:${dockerImageTag}", "-f Dockerfile .")
                 }
             }
         }
