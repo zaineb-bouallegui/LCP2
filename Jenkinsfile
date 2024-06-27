@@ -6,7 +6,7 @@ pipeline {
     }
      environment {
         registry = "yousseflogtari/rne" // Docker repository name
-        dockerImage = "RNEfront:v1" // Tag for Docker image
+        dockerImage = "rnefront:v1" // Tag for Docker image
     }
 
     stages {
