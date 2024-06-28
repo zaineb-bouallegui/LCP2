@@ -49,7 +49,7 @@ pipeline {
             steps {
                 script {
                     // Push Docker image to your Docker repository
-                   docker.withRegistry('https://hub.docker.com/repository/docker/yousseflogtari/rne/general', 'yousseflogtari') {
+                   docker.withRegistry('https://index.docker.io/v1/', 'yousseflogtari') {
                    dockerImage.push()
                    }
                       }
