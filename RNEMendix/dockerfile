@@ -1,0 +1,18 @@
+# Use an OpenJDK base image
+FROM openjdk:11-jre-slim
+
+
+
+# Install necessary packages
+RUN apt-get update && apt-get install -y wget unzip
+
+# Download and install the Mendix runtime
+RUN wget -q https://download.mendix.com/runtimes/10.8.1.33134/mendix-10.8.1.33134.tar.gz -O /tmp/mendix.tar.gz && \
+    tar -xzf /tmp/mendix.tar.gz -C /opt && \
+    rm /tmp/mendix.tar.gz
+
+# Copy the deployment package into the container
+COPY RNE_20240629_1412.mda /opt/mendix/build/
+
+# Set the entrypoint
+ENTRYPOINT ["/opt/mendix/runtime/start.sh"]
