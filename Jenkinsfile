@@ -59,7 +59,7 @@ pipeline {
             steps {
                 script {
                     // Push Docker image to your Docker repository
-                    docker.withRegistry('https://index.docker.io/v1/', 'yousseflogtari') {
+                    docker.withRegistry('https://index.docker.io/v1/', 'jenkins-docker') {
                         dockerImage.push()
                     }
                 }
