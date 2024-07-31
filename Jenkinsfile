@@ -21,6 +21,15 @@ pipeline {
             }
         }
         
+        stage('Install Angular CLI') {
+            when {
+                branch 'RNEfrontAngular'
+            }
+            steps {
+                sh 'npm install -g @angular/cli@16'
+            }
+        }
+
         stage('Build Angular App') {
             when {
                 branch 'RNEfrontAngular'
@@ -30,14 +39,15 @@ pipeline {
                 sh 'ng build'
             }
         }
-         stage('Dockerize Angular App') {
+        
+        stage('Dockerize Angular App') {
             when {
                 branch 'RNEfrontAngular'
             }
             steps {
                 script {
-                    /// Build Docker image
-                     dockerImage = docker.build("${registry}:${dockerImageTag}", "-f dockerfile .")
+                    // Build Docker image
+                    dockerImage = docker.build("${registry}:${dockerImageTag}", "-f dockerfile .")
                 }
             }
         }
@@ -49,20 +59,17 @@ pipeline {
             steps {
                 script {
                     // Push Docker image to your Docker repository
-                   docker.withRegistry('https://index.docker.io/v1/', 'yousseflogtari') {
-                   dockerImage.push()
-                   }
-                      }
+                    docker.withRegistry('https://index.docker.io/v1/', 'yousseflogtari') {
+                        dockerImage.push()
+                    }
                 }
+            }
         }
-        
-      
     }
     
     post {
         success {
             echo 'Cleaning up...'
-            
         }
     }
 }
