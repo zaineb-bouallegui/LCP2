@@ -1,0 +1,38 @@
+eureka:
+  instance:
+    hostname: config-server
+  client:
+    service-url:
+      defaultZone: http://discovery:8761/eureka
+
+server:
+  port: 8082
+
+spring:
+  application:
+    name: demande
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://postgres:5432/RNEdb?currentSchema=demande
+    username: postgres
+    password: youssef31
+
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    port: 587
+    username: zainebbouallagui3@gmail.com
+    password: Zaineb*123
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        default_schema: demande
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  management:
+    tracing:
+      sampling:
+        probability: 1.0

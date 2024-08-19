@@ -1,0 +1,57 @@
+version: '3.8'
+services:
+  config-server:
+    image: config-server:latest
+    container_name: config-server
+    networks:
+      - spring-boot-network
+    ports:
+      - "8888:8888"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8888/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  discovery:
+    image: discovery:latest
+    container_name: discovery
+    networks:
+      - spring-boot-network
+    ports:
+      - "8761:8761"
+    depends_on:
+      config-server:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8761/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  gateway:
+    image: gateway:latest
+    container_name: gateway
+    networks:
+      - spring-boot-network
+    ports:
+      - "8222:8222"
+    depends_on:
+      config-server:
+        condition: service_healthy
+      discovery:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8222/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+ 
+ 
+
+networks:
+  spring-boot-network:
+    driver: bridge
+
+

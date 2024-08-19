@@ -1,0 +1,35 @@
+eureka:
+   instance:
+      hostname: config-server
+   client:
+      service-url:
+         defaultZone: http://discovery:8761/eureka
+
+
+server:
+   port: 8081
+spring:
+   application:
+      name: referentiel
+   datasource:
+      driver-class-name: org.postgresql.Driver
+      url: jdbc:postgresql://postgres:5432/RNEdb?autoReconnect=true&useSSL=false&createDatabaseIfNotExist=true&currentSchema=referentiel
+      username: postgres
+
+
+      password: youssef31
+
+
+
+   jpa:
+      hibernate:
+         ddl-auto: update
+      properties:
+         hibernate:
+            default_schema: referentiel
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+management:
+   tracing:
+      sampling:
+         probability: 1.0
